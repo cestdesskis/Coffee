@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Which Coffee??</title>
+        <style>
+        </style>
+    </head>
+    <body>
+    <div class='main'>
+        <div class='imag'>
+        <button id="art"> </button>
+        </div>
+        <div class='se'>
+            <h2 id="out">Click Cup to Generate Beverage</h2>
+            <p id='info'>@the.dailydrop</p>
+            <a href="http://coffee.great-site.net/">http://coffee.great-site.net/</a>
+            
+        </div>
+        
+
+
+    </div>
+    <script>
+    // 1. Find and store the element we want to listen to events on.\
+    var imgbutton = document.getElementById("art");
+    var out = document.getElementById("out");
+    var info = document.getElementById('info');
+        
+    // 2. Define the function that will respond to the event.
+    var onButtonClick = function() {
+        
+        var r = Math.random();
+        var options = ['Cortado', 'Flat White', 'Cappuccino', 'Espresso', 'Latte', 'Pour Over', 'Macchiato', 'Piccolo Latte', 'Mocha', 'Hot Chocolate'];
+        var l = options.length-1;
+
+        
+
+        var o = Math.round(r*l)
+
+        if(options[o] == 'Latte' || options[o] == 'Flat White' || options[o] == 'Mocha' || options[o] == 'Cortado' || options[o] == 'Piccolo Latte' || options[o] == 'Cappuccino' || options[o] == 'Hot Chocolate'){
+            var art_random = Math.random();
+            var art_options = ['Rosetta', 'Stacked Tulip', 'Swan', 'Grapes', 'Blob', 'Heart', 'Bear', 'Sun', 'Snail', 'Rose', 'Wing-Tipped Tulip', 'Rosetta', 'Hollow Heart']
+            var art_len = art_options.length-1;
+            var art_output = Math.round(art_random*art_len)
+
+            info.textContent = 'Latte Art Suggestion: ' + art_options[art_output];
+        }else{
+            info.textContent = '@the.dailydrop';
+        }
+        
+        out.textContent = options[o];
+    };
+    // 3. Add the event listener for the element and function
+    // clickerButton.addEventListener("mouseover", onButtonClick);
+    imgbutton.addEventListener("click", onButtonClick);
+    
+    </script>
+
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+        
+        h2{
+            font-family:sans-serif;
+            font-size: xx-large;
+            padding: 0px;
+
+    
+        }
+        p{
+            font-family: sans-serif;
+            font-size: medium;
+
+        }
+        a{
+            font-family: sans-serif;
+            font-size: small;
+        }
+    </style>
+
+    <style>
+        @media all and (max-width: 500px){
+            
+            .imag{
+                background-color: rgb(28, 104, 192);
+            }
+        }
+        .main{
+            padding: 4%;
+            position: relative;
+            align-content: center;
+        }
+        .imag{
+            position: relative;
+            /* padding-top: 60%; */
+            padding: 120px;
+
+            /* background-color: aquamarine; */
+        }
+        .se{
+            text-align: center;
+            padding-top: 0%;
+            /* background-color: blueviolet; */
+        }
+        #art {
+            top: 0;
+            margin: auto;
+            position: absolute;
+            
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            width: 260px;
+            height: 280px;
+            /* max-width: 50vw; */
+            background: url("boring.png") no-repeat;
+            /* top: 50%; */
+            border: none;
+            padding: 40px;
+            
+        }
+        #art:hover {
+            background: url("rosetta.png") no-repeat;
+        }
+
+        
+    </style>
+    </body>
+</html>
