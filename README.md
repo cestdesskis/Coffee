@@ -1,3 +1,3 @@
-# Coffee Site
+# Which Coffee
 
-<h1>Coffee Site</h1>
+Basic website that helps the user decide which type of caffinated beverage they should enjoy that day. Will also provide latte art suggestions when applicable.
